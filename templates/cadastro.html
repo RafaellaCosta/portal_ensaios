@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title> Rafaella Costa Fotografia | Cadastro</title>
+    <link class="favicon" rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/forms.css" />
+    <!-- <script type="text/javascript" src="../js/jquery.js" ></script> -->
+    <!-- <script type="application/javascript" src="../js/main.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="navegacao">
+            <img alt="logo Rafaella Costa" class="logo" src="../imagens/marcadagua.png" />
+        </nav>
+    </header>
+    <main>
+        <h1>Usuários</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <ul class="erros"></ul>
+            <div class="acoes">
+                <button id="botao-listar" class="botao enviar" type="button">Listar usuários</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <div class="rodape">
+            <ul class="media-list">
+                <li>
+                    <a class="media-link facebook" href="https://www.facebook.com/faellacostafoto/"
+                        target="blank">Facebook</a>
+                </li>
+                <li>
+                    <a class="media-link instagram" href="https://www.instagram.com/faellacostafoto/"
+                        target="blank">Instagram</a>
+                </li>
+            </ul>
+            <p>2021 Rafaella Costa | Fotografia Afetiva º 11 95874-0247 - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#botao-listar').click(function () {
+            
+
+            $.ajax({
+                url: "http://localhost:5000/usuarios",
+                type: "POST",
+                contentType: "application/json",
+                crossDomain: true,
+                data: JSON.stringify(jsonBody),
+                dataType: "jsonp",
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function () {
+                    alert('Houve um problema de comunicação');
+                }
+            })
+
+            $.post("http://localhost:5000/usuarios",
+                jsonBody,
+                function (response) {
+                    console.log(response);
+                },
+                "jsonp"
+            )
+
+            // $.ajax({
+            //     url: "http://localhost:5000/usuarios",
+            //     type: "POST",
+            //     contentType: "application/json",
+            //     crossDomain: true,
+            //     data: JSON.stringify(jsonBody),
+            //     dataType: "jsonp",
+            //     success: function (response) {
+            //         console.log(response);
+            //     },
+            //     error: function () {
+            //         alert('Houve um problema de comunicação');
+            //     }
+            // })
+        })
+    })
+</script>
+
+</html>
