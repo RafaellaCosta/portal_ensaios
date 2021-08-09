@@ -7,11 +7,8 @@
     <link class="favicon" rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/forms.css" />
-    <!-- <script type="text/javascript" src="../js/jquery.js" ></script> -->
-    <!-- <script type="application/javascript" src="../js/main.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/jquery.js" ></script> 
+    <script type="application/javascript" src="../js/main.js"></script> 
 </head>
 
 <body>
@@ -21,13 +18,28 @@
         </nav>
     </header>
     <main>
-        <h1>Usuários</h1>
-        <form method="POST" enctype="multipart/form-data">
+        <h1>Cadastre-se</h1>
+        <!-- <form method="POST" enctype="multipart/form-data"> -->
             <ul class="erros"></ul>
-            <div class="acoes">
-                <button id="botao-listar" class="botao enviar" type="button">Listar usuários</button>
+            <div>
+                <label for="-campo-login"> Login:</label>
+                <input id="campo-login" 
+                       name="login" 
+                       type="text" 
+                       required />
             </div>
-        </form>
+            <div>
+                <label for="campo-senha"> Senha:</label>
+                <input id="campo-senha" 
+                       name="senha" 
+                       type="password" 
+                       required 
+                       minlength="3" />
+            </div>
+            <div class="acoes">
+                <button id="botao-enviar" class="botao enviar" type="buton">Enviar</button>
+            </div>
+        <!-- </form> -->
     </main>
     <footer>
         <div class="rodape">
@@ -45,7 +57,7 @@
         </div>
     </footer>
 </body>
-<script>
+<!-- <script>
     $(document).ready(function () {
         $('#botao-listar').click(function () {
             
@@ -89,6 +101,6 @@
             // })
         })
     })
-</script>
+</script> -->
 
 </html>
