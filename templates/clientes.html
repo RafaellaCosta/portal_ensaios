@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>Clientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="../static/css/site.css" rel="stylesheet" />
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="application/javascript" src="../static/js/main.js"></script>
+</head>
+
+<body>
+    <div class="container-full">
+        <div class="row justify-content-md-center titulo">
+            <div class="col-lg-auto">
+                <h1 class="center titulo">Clientes</h1>
+            </div>
+        </div>
+        <br />
+
+        <div class="container">
+            <section>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="campo-nome">Nome</label>
+                        <input type="text" class="form-control" id="campo-nome" placeholder="Digite seu Nome">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="campo-sobrenome">Sobrenome</label>
+                        <input type="text" class="form-control" id="campo-sobrenome" placeholder="Digite seu Sobrenome">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="campo-email">Email</label>
+                        <input type="email" class="form-control" id="campo-email" placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="campo-telefone">Telefone</label>
+                        <input type="text" class="form-control" id="campo-telefone" maxlength="11"
+                            placeholder="Digite seu telefone">
+                    </div>
+                </div>
+                <br />
+                <button id="botao-enviar" type="button" class="btn btn-primary">Enviar</button>
+            </section>
+            <br />
+            <section>
+                <h3>Lista de Clientes</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Sobrenome</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listar-usuarios">
+                    </tbody>
+                </table>
+                <br />
+                <button id="botao-atualizar" type="button" class="btn btn-primary">Atualizar</button>
+            </section>
+            <section>
+                <br/>
+                <button id="botao-deletar" type="button" class="btn btn-danger">Deletar todos os clientes</button>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
